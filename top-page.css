@@ -18,14 +18,14 @@ body {
   text-align: center;
   padding:0;
   margin: 0;
-  background: url(img/bg-body.gif) repeat-x 0 0;
+  background: url(http://pic.yupoo.com/sinaweibo4907754196_v/33f27a9b/6c653394.jpg) repeat-x 0 0;
 }
 
 #bkgrcel {
   text-align: left;
   width: 1200px;
   margin: 0 auto;
-  background: url("http://pic.yupoo.com/sinaweibo4907754196_v/33f27a9b/6c653394.jpg") no-repeat 0 0;
+  background: url(http://pic.yupoo.com/sinaweibo4907754196_v/33f27a9b/6c653394.jpg) no-repeat 0 0;
   background-color: #fff;
   background-position: top center;
 }
