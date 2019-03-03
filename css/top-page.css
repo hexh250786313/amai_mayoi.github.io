@@ -20,6 +20,17 @@
   padding: 0;
 }
 
+/*导入字体*/
+@font-face {
+  font-family: 'Hiragino Kaku Gothic Pro';   /*字体名称*/
+  src: url('../font/ヒラギノ角ゴ Pro W3.otf');       /*字体源文件*/
+}
+
+@font-face {
+  font-family: 'MS PGothic';   /*字体名称*/
+  src: url('../font/msgothic.ttc');       /*字体源文件*/
+}
+
 /*链接的全局样式设定*/
 
 a:link,
@@ -41,17 +52,18 @@ a:active { color: #f00; }
 
 body {
   font-size: 85%;
+  font-family: "Hiragino Kaku Gothic Pro", "MS PGothic", sans-serif;
   text-align: center;
   padding:0;
   margin: 0;
-  background: url(img/bg-body.gif) repeat-x 0 0;
+  background: url(../img/bg-body2.gif) repeat-x 0 0;
 }
 
 #bkgrcel {
   text-align: left;
   width: 1200px;
   margin: 0 auto;
-  background: url(img/top.png) no-repeat 0 0;
+  background: url(http://pic.yupoo.com/sinaweibo4907754196_v/8e69904f/19ecaf8d.png) no-repeat 0 0;
   background-color: #fff;
   background-position: top center;
 }
@@ -105,7 +117,7 @@ body {
 
 #footer {
   padding: 1em 0 2em;
-  background-color: #9c0;
+  background-color: #AD46CD;
 }
 
 /*----------------------------------------------
@@ -145,7 +157,7 @@ body {
   font-weight: bold;
   height: 20px;
   overflow: hidden;
-  background-color: #99ffcc;
+  background-color: #8EE5EE;
   color: #000;
 }
 
@@ -171,8 +183,8 @@ h2,h3,h4,h5,h6 {
   font-size: 120%;
   margin-bottom: 0;
   padding: 5px 0 5px 30px;
-  background: url(img/contents_logo.gif) no-repeat 0 50%;
-  background-color: rgba( 204, 255, 204, 0.70 );
+  background: url(../img/contents_logo.gif) no-repeat 0 50%;
+  background-color: rgba( 255, 187, 255, 0.70 );
 }
 
 #contents dl { margin: 0 0 2em; }
@@ -180,7 +192,7 @@ h2,h3,h4,h5,h6 {
 #contents dt {
   font-weight: bold;
   padding: 5px 1em 5px 30px;
-  background-color: #9cf;
+  background-color: #B2DFEE;
 }
 
 #contents dd {
@@ -193,14 +205,17 @@ h2,h3,h4,h5,h6 {
 }
 
 #contents p {
-  font-family: "ＭＳ ゴシック",sans-serif;
+  font-family: "MS PGothic",sans-serif;
   font-size: 90%;
   line-height: 1.5em;
   margin-bottom: 1em;
 }
 
 /*-- <pre>样式设定(class="p_pr") --*/
-#contents p.p_pr {white-space: pre;}
+#contents p.p_pr {
+  white-space: pre;
+  text-align: center;
+}
 
 /*-- 红字部分样式设定(class="clor_r") --*/
 #contents p.clor_r { color: #f00;}
@@ -224,8 +239,8 @@ h2,h3,h4,h5,h6 {
   font-size: 120%;
   margin-bottom: 0;
   padding: 5px 0 5px 30px;
-  background: url(img/products_logo.gif) no-repeat 0 50%;
-  background-color: rgba( 204, 255, 204, 0.70 );
+  background: url(../img/products_logo.gif) no-repeat 0 50%;
+  background-color: rgba( 255, 187, 255, 0.70 );
 }
 
 #products dl { margin: 0 0 2em; }
@@ -234,7 +249,7 @@ h2,h3,h4,h5,h6 {
   font-weight: bold;
   text-align: center;
   padding: 5px 1em 5px 0px;
-  background-color: #fc0;
+  background-color: #CDC5BF;
 }
 
 #products dd {
@@ -302,8 +317,8 @@ h2,h3,h4,h5,h6 {
   font-size: 120%;
   margin-bottom: 0;
   padding: 5px 0 5px 30px;
-  background: url(img/sidebar_logo.gif) no-repeat 0 50%;
-  background-color: rgba( 204, 255, 204, 0.70 );
+  background: url(../img/sidebar_logo.gif) no-repeat 0 50%;
+  background-color: rgba( 255, 187, 255, 0.50 );
 }
 
 /*-- sidebar中仅限中文的字间距 --*/
@@ -349,7 +364,7 @@ h2,h3,h4,h5,h6 {
   display: block;
   padding: 10px 0;
   border: 1px outset #fff;
-  background: url(img/new.gif) no-repeat 95% 50%;
+  background: url(../img/new.gif) no-repeat 95% 50%;
   background-color: #eee;
   color: #060;
 }
@@ -372,8 +387,8 @@ h2,h3,h4,h5,h6 {
   font-size: 120%;
   margin-bottom: 0;
   padding: 5px 0 5px 30px;
-  background: url(img/sidebar_logo.gif) no-repeat 0 50%;
-  background-color: rgba( 204, 255, 204, 0.70 );
+  background: url(../img/sidebar_logo.gif) no-repeat 0 50%;
+  background-color: rgba( 255, 187, 255, 0.70 );
 }
 
 #cnt_sidebar dl { margin: 0 0 2em; }
@@ -381,7 +396,7 @@ h2,h3,h4,h5,h6 {
 #cnt_sidebar dt {
   font-weight: bold;
   padding: 5px 10px;
-  background-color: #9c3;
+  background-color: #EEA2AD;
 }
 
 #cnt_sidebar dd {
@@ -396,8 +411,19 @@ h2,h3,h4,h5,h6 {
 #cnt_sidebar p {
   font-size: 90%;
   line-height: 1.2em;
-  margin-bottom: 1em;
+  margin-left: 45px;
+  text-decoration: underline;
+}
+
+#cnt_sidebar img#btn { cursor:pointer; }
+
+#cnt_sidebar p.p_mail {
+  font-size: 90%;
+  line-height: 1.2em;
   color: #f00;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 #cnt_sidebar ul,
@@ -409,7 +435,10 @@ h2,h3,h4,h5,h6 {
 
 /*----------------------------------------------
   [8] footer block设定 */
-#footer p { text-align: center; }
+#footer p {
+  text-align: center;
+  color: white;
+}
 
 /*----------------------------------------------
   [9] 使背景图片正常显示的样式设定 */
