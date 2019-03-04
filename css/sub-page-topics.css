@@ -17,6 +17,29 @@
   padding: 0;
 }
 
+/*导入用Font Spider压缩过的字体*/
+@font-face {
+  font-family: "ヒラギノ角ゴ Pro W3";
+  src: url("../font/sub-page-topics/ヒラギノ角ゴ Pro W3.woff2") format("woff2"),
+       url("../font/sub-page-topics/ヒラギノ角ゴ Pro W3.woff") format("woff"),
+       url("../font/sub-page-topics/ヒラギノ角ゴ Pro W3.ttf") format("truetype"),
+       url("../font/sub-page-topics/ヒラギノ角ゴ Pro W3.eot") format("embedded-opentype"),
+       url("../font/sub-page-topics/ヒラギノ角ゴ Pro W3.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "msgothic_2";
+  src: url("../font/sub-page-topics/msgothic_2.woff2") format("woff2"),
+       url("../font/sub-page-topics/msgothic_2.woff") format("woff"),
+       url("../font/sub-page-topics/msgothic_2.ttf") format("truetype"),
+       url("../font/sub-page-topics/msgothic_2.eot") format("embedded-opentype"),
+       url("../font/sub-page-topics/msgothic_2.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*链接的全局样式设定*/
 
 a:link,
@@ -38,10 +61,11 @@ a:active { color: #f00; }
 
 body {
   font-size: 85%;
+  font-family: "ヒラギノ角ゴ Pro W3", "msgothic_2", sans-serif;
   text-align: center;
   padding:0;
   margin: 0;
-  background: url(img/bg-body.gif) repeat-x 0 0;
+  background: url(../img/bg-body.gif) repeat-x 0 0;
 }
 
 #bkgrcel {
@@ -100,8 +124,9 @@ background-color: #fff;
 }
 
 #footer {
+  width: 1920px;
   padding: 1em 0 2em;
-  background-color: #9c0;
+  background-color: #AD46CD;
 }
 
 /*----------------------------------------------
@@ -114,7 +139,7 @@ background-color: #fff;
   position: absolute;
   top: 25px;
   right: 10px;
-  color: #9cf;
+  color: #AD46CD;
 }
 
 .logo_s2 {
@@ -157,7 +182,7 @@ background-color: #fff;
 }
 
 .lb_new {
-  background: url(img/new025_11.gif) no-repeat 90% 50%;
+  background: url(../img/new.gif) no-repeat 90% 50%;
 }
 
 #header dl {
@@ -198,8 +223,8 @@ h2,h3,h4,h5,h6 {
   font-size: 120%;
   margin-bottom: 0;
   padding: 5px 0 5px 30px;
-  background: url(img/contents_logo.gif) no-repeat 0 50%;
-  background-color: rgba( 204, 255, 204, 0.70 );
+  background: url(../img/contents_logo.gif) no-repeat 0 50%;
+  background-color: rgba( 255, 187, 255, 0.70 );
 }
 
 #contents dl { margin: 0 0 2em; }
@@ -207,7 +232,7 @@ h2,h3,h4,h5,h6 {
 #contents dt {
   font-weight: bold;
   padding: 5px 1em 5px 30px;
-  background-color: #9cf;
+  background-color: rgba( 255, 187, 255, 0.85 );
 }
 
 #contents dd {
@@ -220,7 +245,7 @@ h2,h3,h4,h5,h6 {
 }
 
 #contents p {
-  font-family: "ＭＳ ゴシック",sans-serif;
+  font-family: "msgothic_2", sans-serif;
   font-size: 90%;
   line-height: 1.5em;
   margin-bottom: 1em;
@@ -250,9 +275,9 @@ h2,h3,h4,h5,h6 {
 #sidebar h6 {
   font-size: 120%;
   margin-bottom: 0;
-  padding: 5px 0 5px 30px;
-  background: url(img/p007_05.gif) no-repeat 0 50%;
-  background-color: rgba( 204, 255, 204, 0.70 );
+  padding: 4px 0 4px 30px;
+  background: url(../img/contents_logo.gif) no-repeat 0 50%;
+  background-color: #EEA2AD;
 }
 
 /*-- navigation --*/
@@ -293,8 +318,11 @@ h2,h3,h4,h5,h6 {
 
 #sidebar dd {
   margin-bottom: 1em;
+  padding: 1em 30px;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
   background-color: rgba( 255, 255, 255, 0.85 );
-  padding: 1em 0;
 }
 
 #sidebar p {
@@ -311,12 +339,19 @@ h2,h3,h4,h5,h6 {
   line-height: 1.2em;
 }
 
+#sidebar a {
+  font-size: 120%;
+}
+
 /*-- sidebar中仅限中文的字间距 --*/
 #sidebar span { letter-spacing: 2px;  }
 
 /*----------------------------------------------
   [5] footer block设定 */
-#footer p { text-align: center; }
+#footer p { 
+  text-align: center;
+  color: white;
+ }
 
 /*----------------------------------------------
   [9] 使背景图片正常显示的样式设定 */
