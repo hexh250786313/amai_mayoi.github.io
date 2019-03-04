@@ -21,27 +21,17 @@
 }
 
 /*导入字体*/
-@font-face {
-  font-family: 'Hiragino Kaku Gothic Pro';   /*字体名称*/
-  src: url('../font/ヒラギノ角ゴ Pro W3.otf');       /*字体源文件*/
-}
+
 
 @font-face {
-  font-family: 'MS PGothic';   /*字体名称*/
-  src: url('../font/msgothic.ttc');       /*字体源文件*/
-}
-
-@font-face {
-    font-family: 'hiragino_kaku_gothic_prow3';
-    src: url('stylesheet/_pro_w3-webfont.eot');
-    src: url('stylesheet/_pro_w3-webfont.eot?#iefix') format('embedded-opentype'),
-         url('stylesheet/_pro_w3-webfont.woff2') format('woff2'),
-         url('stylesheet/_pro_w3-webfont.woff') format('woff'),
-         url('stylesheet/_pro_w3-webfont.ttf') format('truetype'),
-         url('stylesheet/_pro_w3-webfont.svg#hiragino_kaku_gothic_prow3') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: "msgothic_2";
+  src: url("msgothic_2.woff2") format("woff2"),
+       url("msgothic_2.woff") format("woff"),
+       url("msgothic_2.ttf") format("truetype"),
+       url("msgothic_2.eot") format("embedded-opentype"),
+       url("msgothic_2.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*链接的全局样式设定*/
@@ -65,7 +55,7 @@ a:active { color: #f00; }
 
 body {
   font-size: 85%;
-  font-family: "hiragino_kaku_gothic_prow3", sans-serif;
+  font-family: "msgothic_2", sans-serif;
   text-align: center;
   padding:0;
   margin: 0;
@@ -218,7 +208,7 @@ h2,h3,h4,h5,h6 {
 }
 
 #contents p {
-  font-family: "hiragino_kaku_gothic_prow3",sans-serif;
+  font-family: "msgothic_2", "MS PGothic",sans-serif;
   font-size: 90%;
   line-height: 1.5em;
   margin-bottom: 1em;
