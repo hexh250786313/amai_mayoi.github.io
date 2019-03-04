@@ -31,6 +31,19 @@
   src: url('../font/msgothic.ttc');       /*字体源文件*/
 }
 
+@font-face {
+  font-family: 'MS PGothic2';   /*字体名称*/
+  src: url('../font/msgothic_2.ttf');       /*字体源文件*/
+}
+
+@font-face {font-family: 'webfont';
+  src: url('//at.alicdn.com/t/webfont_n23qzoh2f1i.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_n23qzoh2f1i.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_n23qzoh2f1i.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_n23qzoh2f1i.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_n23qzoh2f1i.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
+}
+
 /*链接的全局样式设定*/
 
 a:link,
@@ -52,7 +65,7 @@ a:active { color: #f00; }
 
 body {
   font-size: 85%;
-  font-family: "Hiragino Kaku Gothic Pro", "MS PGothic", sans-serif;
+  font-family: "Hiragino Kaku Gothic Pro", "MS PGothic2", sans-serif;
   text-align: center;
   padding:0;
   margin: 0;
@@ -436,6 +449,7 @@ h2,h3,h4,h5,h6 {
 /*----------------------------------------------
   [8] footer block设定 */
 #footer p {
+  width: 100%;
   text-align: center;
   color: white;
 }
