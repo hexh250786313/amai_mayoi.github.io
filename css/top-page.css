@@ -32,16 +32,16 @@
 }
 
 @font-face {
-  font-family: 'MS PGothic2';   /*字体名称*/
-  src: url('../font/msgothic_2.ttf');       /*字体源文件*/
-}
+    font-family: 'hiragino_kaku_gothic_prow3';
+    src: url('stylesheet/_pro_w3-webfont.eot');
+    src: url('stylesheet/_pro_w3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('stylesheet/_pro_w3-webfont.woff2') format('woff2'),
+         url('stylesheet/_pro_w3-webfont.woff') format('woff'),
+         url('stylesheet/_pro_w3-webfont.ttf') format('truetype'),
+         url('stylesheet/_pro_w3-webfont.svg#hiragino_kaku_gothic_prow3') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
-@font-face {font-family: 'webfont';
-  src: url('//at.alicdn.com/t/webfont_n23qzoh2f1i.eot'); /* IE9*/
-  src: url('//at.alicdn.com/t/webfont_n23qzoh2f1i.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_n23qzoh2f1i.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/webfont_n23qzoh2f1i.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_n23qzoh2f1i.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
 }
 
 /*链接的全局样式设定*/
@@ -65,7 +65,7 @@ a:active { color: #f00; }
 
 body {
   font-size: 85%;
-  font-family: "Hiragino Kaku Gothic Pro", "MS PGothic2", sans-serif;
+  font-family: "hiragino_kaku_gothic_prow3", sans-serif;
   text-align: center;
   padding:0;
   margin: 0;
@@ -218,7 +218,7 @@ h2,h3,h4,h5,h6 {
 }
 
 #contents p {
-  font-family: "MS PGothic",sans-serif;
+  font-family: "hiragino_kaku_gothic_prow3",sans-serif;
   font-size: 90%;
   line-height: 1.5em;
   margin-bottom: 1em;
