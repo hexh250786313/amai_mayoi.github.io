@@ -217,7 +217,7 @@ h2,h3,h4,h5,h6 {
 }
 
 #contents p {
-  font-family: "msgothic_2", "MS PGothic",sans-serif;
+  font-family: "msgothic_2", sans-serif;
   font-size: 90%;
   line-height: 1.5em;
   margin-bottom: 1em;
@@ -448,7 +448,7 @@ h2,h3,h4,h5,h6 {
 /*----------------------------------------------
   [8] footer block设定 */
 #footer p {
-  width: 100%;
+  width: 1080px;
   text-align: center;
   color: white;
 }
