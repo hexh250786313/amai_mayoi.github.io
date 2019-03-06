@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>個人簡介</title>
+    <meta name="description" content="真宵的個人簡介">
+    <meta name="keywords" content="真宵,k1ryu1ma,10r7,九,blog,博客,簡介">
+    <link rel="stylesheet" href="css/sub-page-abtme.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="bkgrcel">
+      <div id="wrapper">
+        <!-- header是网页的上半部分 -------------->
+        <div id="header">
+          <p class="logo_t">A M A I - M A Y O I</p>
+          <p class="logo">甘い 迷い 是真宵哒</p>
+          <div id="sidebar">
+            <!-- 右上侧的box1 ------------------>
+            <h2>CONTENTS</h2>
+            <ul class="navigation">
+              <!-- "li_n"表示带有NEW!logo的 / "li"表示没有NEW!logo -->
+              <li><a href="index.html">　<span>返回我的主頁／TOP-PAGE</span></a></li>
+              <li_n><a href="topics.html">　<span>真宵的日誌更新</span>／TOPICS</a></li_n>
+              <li_n><a href="products.html">　<span>戰果情報</span>　＜PRODUCTS＞</a></li_n>
+              <!----------------------------------------------------->
+            </ul>
+          </div>
+          <!-- sidebar end -->
+        </div>
+        <!-- header end -->
+        <!-- container是网页的下半部分 -------------->
+        <div id="container">
+          <!-- contents是中间的内容box ------------->
+          <div id="contents">
+            <!-- 中央box ---------------------->
+            <h2>TOPICS／真宵最新情報</h2>
+            <dl>
+              <!-- 第一部分 ------------------------------->
+              <dt>2019/02/28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019是個全新的開始也請大家多多指教！</dt>
+              <dd>
+                <p>
+                今天是2019/02/28，姑且完成了網站首頁的最基礎的樣式設定，雖然基本上都是借鑒來的...。<br />
+                <br />
+                接下來會相繼完成TOPICS、PRODUCTS和ABOUT ME部分，然後就是正式的上線了。所以下次更新也就是網站完成的時候，到時候會一並發布這個博客未來更新的日誌的類型和以後建設的方向。
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                然後，雖然是遲到的新年祝福，2019年也請大家繼續支持多多指教！<br>
+                接下來會相繼完成TOPICS、PRODUCTS和ABOUT ME部分，然後就是正式的上線了。所以下次更新也就是網站完成的時候，到時候會一並發布這個博客未來更新的日誌的類型和以後建設的方向。
+                接下來會相繼完成TOPICS、PRODUCTS和ABOUT ME部分，然後就是正式的上線了。所以下次更新也就是網站完成的時候，到時候會一並發布這個博客未來更新的日誌的類型和以後建設的方向。
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                然後，雖然是遲到的新年祝福，2019年也請大家繼續支持多多指教！<br>
+                接下來會相繼完成TOPICS、PRODUCTS和ABOUT ME部分，然後就是正式的上線了。所以下次更新也就是網站完成的時候，到時候會一並發布這個博客未來更新的日誌的類型和以後建設的方向。
+                
+                <br />
+                </p>
+              </dd>
+              <!-- 第一部分结束 ---------------------->
+            </dl>
+            <!-- 中央box结束 ---------------------->
+          </div>
+          <!-- container end --------------------------------------->
+          <!-- 左下侧box ----------------------------------------------->
+          <div id="cnt_sidebar">
+            <h2>LINK／聯系方式</h2>
+            <!-- 左下侧box1 ---------------------->
+            <dl>
+              <dt>外部聯系方式</dt>
+              <dd>
+                <p>
+                  <a href="https://github.com/hexh250786313" target="_blank"><img src="img/link_GitHub_user.gif" /></a>&nbsp;⇐&nbsp;GitHub<br /><br />
+                  <a href="https://weibo.com/HanaSoup" target="_blank"><img src="img/link_weibo_user.gif" /></a>&nbsp;⇐&nbsp;weibo<br /><br />
+                  <a href="https://twitter.com/Hana_Soup" target="_blank"><img src="img/link_Twitter_user.gif" /></a>&nbsp;⇐&nbsp;Twitter
+                </p>
+              </dd>
+              <!-- 左下侧box1结束 ---------------------------------->
+              <!-- 左下侧box2 --------------------------------------------->
+              <dt>如有問題請聯系</dt>
+              <dd>
+                &nbsp;&nbsp;&nbsp;&nbsp;<img id="btn" src="img/link_mail.png" data-clipboard-text="250786313@qq.com" />
+                <script>
+                  var btn = document.getElementById('btn');
+                  var clipboard = new ClipboardJS(btn);
+
+                  clipboard.on('success', function(e) {
+                      console.log(e);
+                      alert("郵箱地址已拷貝到剪貼板！");
+                  });
+
+                  clipboard.on('error', function(e) {
+                      console.log(e);
+                      alter("拷貝失敗，請手動輸入郵箱地址：250786313@qq.com");
+                  });
+                </script>
+                <br />
+                <p class="p_mail">
+                  以上三個外部號都無法聯系到我的時候，請使用郵箱聯系我<br />
+                  如果本網站內容有任何侵權或不當行為務必請最先告知讓我及時改正<br /><br />
+                  謝謝各位，祝您生活愉快<br />
+                </p>
+              </dd>
+              <!-- 左下侧box2结束 --------------------------------------->
+            </dl>
+            <!-- 左下侧box结束 ---------------------->
+          </div>
+          <!-- cnt_sidebar end ------------------------------------------->
+          <!-- 保证背景图片正常显示的不可删除的代码 --------------------------->
+          <p id="clr"></p>
+        </div>
+        <!-- container end ---------------------------->
+      </div>
+      <!-- wrapper end ------------------------------------------>
+      <!-- footer是网页的注脚 ------------------------------------------>
+      <div id="footer">
+        <p>Copyright © 2019 AMAI_MAYOI ❖ Designed by Xuhua He.</p>
+      </div>
+      <!-- footer end --------------------->
+    </div>
+    <!-- bkgrcel end ---------------------------------------------->
+  </body>
+</html>
+
+</html>

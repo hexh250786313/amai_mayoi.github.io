@@ -97,26 +97,6 @@ body {
   float: right;
 }
 
-.table_01{
-width: 100%;
-border-collapse: collapse;
-}
-
-.table_01 th{
-width: 70%;
-padding: 6px;
-text-align: left;
-vertical-align: top;
-color: #333;
-background-color: #eee;
-}
-
-.table_01 td{
-vertical-align: top;
-padding: 6px;
-background-color: #fff;
-}
-
 /*---- sidebar(header部分) ----*/
 #sidebar {
   width: 250px;
@@ -185,53 +165,15 @@ background-color: #fff;
   background: url(../img/new.gif) no-repeat 90% 50%;
 }
 
-#header dl {
-  width: 250px;
-  height: 230px;
-  overflow: hidden;
-  position: absolute;
-  top: 180px;
-}
-
-#header dt {
-  font-weight: bold;
-  height: 20px;
-  overflow: hidden;
-  background-color: #99ffcc;
-  color: #000;
-}
-
-#header dd {
-  font-size: 90%;
-  height: 90px;
-  padding: 10px 10px 0;
-  overflow: auto;
-  background-color: rgba( 255, 255, 255, 0.85 );
-  color: #060;
-}
-
-#header dd p {
-  line-height: 1.8em;
-  margin-bottom: 0.5em;
-}
-
 /*----------------------------------------------
   [3] contents block设定 */
 /*-- 按照html文档的block顺序排列 --*/
-
-h2,h3,h4,h5,h6 {
-  font-size: 120%;
-  margin-bottom: 0;
-  padding: 5px 0 5px 30px;
-  background: url(../img/contents_logo.gif) no-repeat 0 50%;
-  background-color: rgba( 255, 187, 255, 0.70 );
-}
 
 #contents dl { margin: 0 0 2em; }
 
 #contents dt {
   font-weight: bold;
-  padding: 5px 1em 5px 30px;
+  padding: 5px 1em 5px 10px;
   background-color: rgba( 255, 187, 255, 0.85 );
 }
 
@@ -251,17 +193,15 @@ h2,h3,h4,h5,h6 {
   margin-bottom: 1em;
 }
 
-/*-- <pre>样式设定(class="p_pr") --*/
-#contents p.p_pr {white-space: pre;}
-
-/*-- 红字部分样式设定(class="clor_r") --*/
-#contents p.clor_r { color: #f00;}
-
-#contents ul,
-#contents ol {
-  list-style-position: inside;
-  margin: 1em 0;
-  line-height: 1.2em;
+#contents a,
+#contents a:link,
+#contents a:visited,
+#contents a:hover,
+#contents a:active {
+  color: #0099FF;
+  text-decoration: none;
+  margin-left: 0;
+  margin-right: 20px;
 }
 
 /*----------------------------------------------
@@ -276,7 +216,7 @@ h2,h3,h4,h5,h6 {
   font-size: 120%;
   margin-bottom: 0;
   padding: 4px 0 4px 30px;
-  background: url(../img/contents_logo.gif) no-repeat 0 50%;
+  background: url(../img/logo_2.gif) no-repeat 3px 50%;
   background-color: #EEA2AD;
 }
 
@@ -316,6 +256,12 @@ h2,h3,h4,h5,h6 {
   background-color: #9cf;
 }
 
+#sidebar dt#index {
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: rgba( 255, 187, 255 );
+}
+
 #sidebar dd {
   margin-bottom: 1em;
   padding: 1em 30px;
@@ -346,12 +292,36 @@ h2,h3,h4,h5,h6 {
 /*-- sidebar中仅限中文的字间距 --*/
 #sidebar span { letter-spacing: 2px;  }
 
+/*-- sidebar中的table --*/
+.table_01{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table_01 th{
+  width: 70%;
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+  color: #333;
+  background-color: #eee;
+  border: 1px solid #b9b9b9;
+}
+
+.table_01 td{
+  text-align: center;
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid #b9b9b9;
+}
+
 /*----------------------------------------------
   [5] footer block设定 */
-#footer p { 
+#footer p {
+  width: 100%;
   text-align: center;
   color: white;
- }
+}
 
 /*----------------------------------------------
   [9] 使背景图片正常显示的样式设定 */
