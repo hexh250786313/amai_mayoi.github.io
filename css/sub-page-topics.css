@@ -193,11 +193,11 @@ body {
   margin-bottom: 1em;
 }
 
-#contents a,
-#contents a:link,
-#contents a:visited,
-#contents a:hover,
-#contents a:active {
+#contents a.top,
+#contents a:link.top,
+#contents a:visited.top,
+#contents a:hover.top,
+#contents a:active.top {
   color: #0099FF;
   text-decoration: none;
   margin-left: 0;
@@ -324,7 +324,7 @@ body {
 }
 
 /*----------------------------------------------
-  [9] 使背景图片正常显示的样式设定 */
+  [6] 使背景图片正常显示的样式设定 */
 #clr {
   clear: both;
   text-align: right;

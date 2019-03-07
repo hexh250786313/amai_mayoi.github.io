@@ -5,12 +5,10 @@
 [1] 基础布局设定
 [2] header block设定
 [3] contents block设定
-[4] products block设定
-[5] 调整用的block设定
-[6] sidebar block(header部分)设定
-[7] sidebar block(container部分)设定
-[8] footer block设定
-[9] 使背景图片正常显示的样式设定
+[4] sidebar block(header部分)设定
+[5] sidebar block(container部分)设定
+[6] footer block设定
+[7] 使背景图片正常显示的样式设定
 
 ----------------------------------------------------------------*/
 
@@ -148,31 +146,6 @@ body {
   color: #AD46CD;
 }
 
-#header dl {
-  width: 250px;
-  height: 230px;
-  overflow: hidden;
-  position: absolute;
-  top: 180px;
-}
-
-#header dt {
-  font-weight: bold;
-  height: 20px;
-  overflow: hidden;
-  background-color: #8EE5EE;
-  color: #000;
-}
-
-#header dd {
-  font-size: 90%;
-  height: 90px;
-  padding: 10px 10px 0;
-  overflow: auto;
-  background-color: rgba( 255, 255, 255, 0.85 );
-  color: #060;
-}
-
 /*----------------------------------------------
   [3] contents block设定 */
 /*-- 按照html文档的block顺序排列 --*/
@@ -213,14 +186,17 @@ body {
   margin-bottom: 1em;
 }
 
-/*-- <pre>样式设定(class="p_pr") --*/
-#contents p.p_pr {
-  white-space: pre;
-  text-align: center;
+/*-- contents中强调用的 --*/
+#contents span.right { float: right; }
+
+/*-- contents中强调用的 --*/
+#contents span.accent {
+  font-size: 15px;
+  color: red;
 }
 
 /*----------------------------------------------
-  [6] sidebar block(header部分)设定 */
+  [4] sidebar block(header部分)设定 */
 /*-- 按照html文档的block顺序排列 --*/
 
 #sidebar h2,
@@ -297,7 +273,7 @@ body {
 }
 
 /*----------------------------------------------
-  [7] sidebar block(container部分)设定 */
+  [5] sidebar block(container部分)设定 */
 /*-- 按照html文档的block顺序排列 --*/
 
 #cnt_sidebar h2,
@@ -348,7 +324,7 @@ body {
 }
 
 /*----------------------------------------------
-  [8] footer block设定 */
+  [6] footer block设定 */
 #footer p {
   width: 100%;
   text-align: center;
@@ -356,7 +332,7 @@ body {
 }
 
 /*----------------------------------------------
-  [9] 使背景图片正常显示的样式设定 */
+  [7] 使背景图片正常显示的样式设定 */
 #clr {
   clear: both;
   text-align: right;
