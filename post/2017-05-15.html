@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>利用GitHub Page搭建自己的Blog</title>
+    <meta name="description" content="利用GitHub Page搭建自己的Blog">
+    <meta name="keywords" content="真宵,k1ryu1ma,10r7,九,blog,博客,利用GitHub Page搭建自己的Blog">
+    <link rel="stylesheet" href="../css/post-page-public.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="bkgrcel">
+      <h1>利用GitHub Page搭建自己的Blog</h1>
+      <h2>目錄</h2>
+      <div id="index">
+        <ul>
+          <li><a href="#1" class="anch"><span>從零開始的建博過程</span></a>
+            <ul>
+              <li><a href="#1_1" class="anch">申請自己的個人域名和修改相關設置</a></li>
+              <li><a href="#1_2" class="anch">設置DNS</a></li>
+              <li><a href="#1_3" class="anch">設置GitHub</a></li>
+            </ul>
+          </li>
+          <li><a href="#2" class="anch"><span>關於博客如何更新</span></a>
+            <ul>
+              <li><a href="#2_1" class="anch">Git設置</a></li>
+              <li><a href="#2_2" class="anch">利用終端命令進行更新</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <h2 id="1">從零開始的建博過程</h2>
+      <div class="contents">
+        <h3 id="1_1">申請自己的個人域名和修改相關設置</h3>
+        <div class="cnt_block">
+          <span>强烈建議有一定HTML基礎的同學使用本教程，如果沒有任何基礎，這篇教程就此可以結束了（除非你真的很愛折騰...）。</span><br />
+          首先需要租一個自己的域名，可以到各大出租域名的站點購買。我是在<a href="https://sg.godaddy.com/zh/" target="_blank">GoDaddy</a>上買的，因爲支持支付寶。先注冊賬號，然後搜自己想要的域名租買即可，結賬的時候會提供各種附加服務，斟酌購買，不購買任何附加服務也是可以的，過程不表。<br />
+          接著在賬戶中找到自己的新域名，找到該域名下的DNS管理，接著要把新域名的服務器綁定到騰訊旗下的<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>域名管理器下。點解域名服務器的更改按鈕，然後把兩個服務器地址修改成如下，也就是騰訊的域名服務器。<br />
+          <pre>
+f1g1ns1.dnspod.net
+f1g1ns1.dnspod.net</pre>
+          然後一般來説等若干小時，域名服務器那裏提示被外部服務器接管則表示成功了。
+        </div>
+        <h3 id="1_2">DNS設置</h3>
+        <div class="cnt_block">
+          接著就是DNS的相關設置，既然之前使用了<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>的域名管理器，那我們需要先到<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>中注冊賬號。<br />
+          然後進入賬戶中新添加域名，也就是剛買的的新域名，接著進入域名管理界面。在這裏會看到很多的記錄，先把A類型的記錄全部暫停掉，否則A類型會不夠用（沒有則不用管）。然後新添加兩條A記錄，名字隨便起，記錄值修改爲如下，其他保持默認。（註：這兩個記錄值是GitHub Page的IP地址）<br />
+          <pre>
+192.30.252.153
+192.30.252.154</pre>
+        </div>
+        <h3 id="1_3">設置GitHub</h3>
+        <div class="cnt_block">
+          因爲是要利用<a href="https://github.com/" target="_blank">GitHub</a>提供的免費的GitHub Page服務器，所以當然先需要一個<a href="https://github.com/" target="_blank">GitHub</a>賬號，先進去注冊。<br />
+          完了以後會發現可以新建倉庫(repositories)，這裏的倉庫(repositories)的意思是指代碼倉庫，即程序員會把代碼交給Github進行云托管。而這裏不需要新建倉庫，而是直接Fork別人的博客倉庫。具體操作是在百度或Google搜索GitHub Page模板，找到好看的以後點進去他的GitHub中，點右上角的Fork。回到自己的主頁，會發現別人的博客代碼倉已經出現在了自己的倉庫中。<br />
+          接著在Fork回來的博客倉中點擊設置(Settings)，頁面往下拉找到GitHub Page，在下拉欄中選擇Master Branch，然後在提示的輸入欄中填入自己的域名，保存即可。<br />
+          至此，你在瀏覽器中輸入自己的域名進入，就會發現已經變成了Fork回來的模板的樣子了。然後就可以通過提交HTML文檔或者使用MarkDown文檔來提交你的日誌了。<br />
+        </div>
+      </div>
+      <h2 id="2">關於博客如何更新</h2>
+      <div class="contents">
+        <h3 id="2_1">Git設置</h3>
+        <div class="cnt_block">
+          如果通過GitHub的在綫編輯器修改編輯文檔會非常地麻煩，所以可以通過在計算機下載Git進行本地提交。不管是Windows還是Linux，先到<a href="https://git-scm.com/" target="_blank">Git</a>的官方網站下載安裝Git到電腦上。<br />
+          接著使用命令行輸入以下代碼檢查存放SSH密鑰的文件夾，Windows的話直接在文檔中檢查是否有名爲.ssh的文件夾。<br />
+          <pre>
+cd ~/.ssh</pre>
+          如果提示沒有則新建一個，如下。<br />
+          <pre>
+mkdir .ssh</pre>
+          接著在該文件夾下生成新的SSH密鑰。<br />
+          <pre>
+ssh-keygen -t rsa -C "<邮件地址>"</pre>
+          提示輸入文件名時鍵入id_rsa，然後設定密碼即可。完成後會在.ssh文件夾下看到id_rsa和id_rsa.pub文件。然後用文本編輯器打開id_rsa.pub，複製其全部密鑰内容。<br />
+          接著進入你的GitHub賬號，在賬戶設置中左側索引找到SSH and GPG keys，新添加一個記錄，名字隨意，把之前拷貝的内容粘貼上去。<br />
+          在命令行中測試連接是否成功，如下。中途會要求鍵入YES，如果最終提示成功，則成功。<br />
+          <pre>
+ssh -T git@github.com</pre>
+          提示成功后，則説明你的電腦已經可以利用Git管理GitHub的代碼了。完善下Git信息，如下。<br />
+          <pre>
+git config --global user.name "<真实姓名>"
+git config --global user.email "<邮箱地址>"</pre>
+        </div>
+        <h3 id="2_2">利用終端命令進行更新</h3>
+        <div class="cnt_block">
+          首先利用Git把你的博客倉克隆到本地，如下。<br />
+          <pre>
+git clone <你的博客倉地址></pre>
+          然後你就可以編輯克隆到本地的代碼倉以編輯博客樣式和日誌文檔，接著可以利用如下代碼重新提交回GitHub。<br />
+          <pre>
+git add --all
+git commit -m "Initial commit"
+git push -u origin master</pre>
+          提示輸入賬號的時候輸入你的GitHub賬號即可。<br />
+        </div>
+      </div>
+      <div id="footer">
+        <p>Copyright © 2019 AMAI_MAYOI ❖ Designed by Xuhua He.</p>
+      </div>
+    </div>
+  </body>
+</html>
