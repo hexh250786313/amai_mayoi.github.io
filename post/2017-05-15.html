@@ -7,6 +7,7 @@
     <title>利用GitHub Page搭建自己的Blog</title>
     <meta name="description" content="利用GitHub Page搭建自己的Blog">
     <meta name="keywords" content="真宵,k1ryu1ma,10r7,九,blog,博客,利用GitHub Page搭建自己的Blog">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/tama.ico" media="screen" />
     <link rel="stylesheet" href="../css/post-page-public.css" type="text/css" media="screen" />
   </head>
   <body>
@@ -36,19 +37,13 @@
         <div class="cnt_block">
           <span>强烈建議有一定HTML基礎的同學使用本教程，如果沒有任何基礎，這篇教程就此可以結束了（除非你真的很愛折騰...）。</span><br />
           首先需要租一個自己的域名，可以到各大出租域名的站點購買。我是在<a href="https://sg.godaddy.com/zh/" target="_blank">GoDaddy</a>上買的，因爲支持支付寶。先注冊賬號，然後搜自己想要的域名租買即可，結賬的時候會提供各種附加服務，斟酌購買，不購買任何附加服務也是可以的，過程不表。<br />
-          接著在賬戶中找到自己的新域名，找到該域名下的DNS管理，接著要把新域名的服務器綁定到騰訊旗下的<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>域名管理器下。點解域名服務器的更改按鈕，然後把兩個服務器地址修改成如下，也就是騰訊的域名服務器。<br />
-          <pre>
-f1g1ns1.dnspod.net
-f1g1ns1.dnspod.net</pre>
-          然後一般來説等若干小時，域名服務器那裏提示被外部服務器接管則表示成功了。
+          接著在賬戶中找到自己的新域名，找到該域名下的DNS管理，接著要把新域名的服務器綁定到騰訊旗下的<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>域名管理器下。點解域名服務器的更改按鈕，然後把兩個服務器地址修改成<code>f1g1ns1.dnspod.net</code>和<code>f1g1ns2.dnspod.net</code>，也就是騰訊的域名服務器。<br />
+          然後一般來説等若干小時，域名服務器那裏提示被外部服務器接管則表示成功了。<br />
         </div>
         <h3 id="1_2">DNS設置</h3>
         <div class="cnt_block">
           接著就是DNS的相關設置，既然之前使用了<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>的域名管理器，那我們需要先到<a href="https://www.dnspod.cn/" target="_blank">DNSPod</a>中注冊賬號。<br />
-          然後進入賬戶中新添加域名，也就是剛買的的新域名，接著進入域名管理界面。在這裏會看到很多的記錄，先把A類型的記錄全部暫停掉，否則A類型會不夠用（沒有則不用管）。然後新添加兩條A記錄，名字隨便起，記錄值修改爲如下，其他保持默認。（註：這兩個記錄值是GitHub Page的IP地址）<br />
-          <pre>
-192.30.252.153
-192.30.252.154</pre>
+          然後進入賬戶中新添加域名，也就是剛買的的新域名，接著進入域名管理界面。在這裏會看到很多的記錄，先把A類型的記錄全部暫停掉，否則A類型會不夠用（沒有則不用管）。然後新添加兩條A記錄，名字隨便起，記錄值設定為<code>192.30.252.153</code>和<code>192.30.252.154</code>，其他保持默認。（註：這兩個記錄值是GitHub Page的IP地址）<br />
         </div>
         <h3 id="1_3">設置GitHub</h3>
         <div class="cnt_block">
