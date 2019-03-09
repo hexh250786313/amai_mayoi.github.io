@@ -1,2 +1,2 @@
-# amai_mayoi.github.io
-真宵的个人主页
+# ywwuyi.space
+我的個人主頁
