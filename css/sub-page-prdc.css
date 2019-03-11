@@ -204,6 +204,11 @@ body {
   margin-right: 20px;
 }
 
+#contents span { 
+  font-size: 120%;
+  color: red;
+}
+
 /*----------------------------------------------
   [4] sidebar block设定 */
 /*-- 按照html文档的block顺序排列 --*/
