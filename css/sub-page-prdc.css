@@ -205,6 +205,8 @@ body {
 }
 
 #contents span { 
+  font-weight: bold;
+  margin-left: 39px;
   font-size: 120%;
   color: red;
 }
@@ -300,7 +302,7 @@ body {
 .table_01 th{
   width: 70%;
   padding: 6px;
-  text-align: left;
+  text-align: center;
   vertical-align: top;
   color: #333;
   background-color: #eee;

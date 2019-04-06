@@ -10,6 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/tama.ico" media="screen" />
     <link rel="stylesheet" href="css/sub-page-abtme.css" type="text/css" media="screen" />
     <script src="script/clipboard.min.js"></script>
+    <script src="script/btn.js"></script>
   </head>
   <body>
     <div id="bkgrcel">
@@ -105,20 +106,6 @@
               <dt>如有問題請聯系</dt>
               <dd>
                 &nbsp;&nbsp;&nbsp;&nbsp;<img id="btn" src="img/link_mail.png" data-clipboard-text="250786313@qq.com" />
-                <script>
-                  var btn = document.getElementById('btn');
-                  var clipboard = new ClipboardJS(btn);
-
-                  clipboard.on('success', function(e) {
-                      console.log(e);
-                      alert("郵箱地址已拷貝到剪貼板！");
-                  });
-
-                  clipboard.on('error', function(e) {
-                      console.log(e);
-                      alter("拷貝失敗，請手動輸入郵箱地址：250786313@qq.com");
-                  });
-                </script>
                 <br />
                 <p class="p_mail">
                   以上三個外部號都無法聯系到我的時候，請使用郵箱聯系我<br />

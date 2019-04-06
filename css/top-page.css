@@ -207,6 +207,19 @@ body {
   background-color: #B2DFEE;
 }
 
+#contents dt span {
+  margin-right: 30px;
+}
+
+#contents dt#no_1 {
+  text-align: center;
+  background-color: #CDC5BF;
+}
+
+#contents dt#no_1 span{
+  margin-right: 0;
+}
+
 #contents dd {
   margin-bottom: 1em;
   padding: 1em 30px;
@@ -259,6 +272,7 @@ body {
 }
 
 #products dd {
+  text-align: center;
   margin-bottom: 1em;
   padding: 1em 30px;
   border-right: 1px solid #999;
@@ -276,8 +290,8 @@ body {
 }
 
 #products p {
+  text-align: left;
   font-size: 90%;
-  white-space: pre;
   line-height: 1.5em;
   margin-bottom: 1em;
 }

@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Style-Type" content="text/css">
@@ -10,42 +9,25 @@
     <meta name="keywords" content="真宵,k1ryu1ma,10r7,九,blog,博客,products">
     <link rel="shortcut icon" type="image/x-icon" href="img/tama.ico" media="screen" />
     <link rel="stylesheet" href="css/sub-page-prdc.css" type="text/css" media="screen">
+    <script src = "script/products.js"></script>
   </head>
   <body>
     <div id="bkgrcel">
       <div id="wrapper">
         <!-- header部分 -->
         <div id="header">
-          <a href="index.html" id="top">
+          <a href="index.html">
             <p class="logo_t">AMAI-MAYOI</p>
             <p class="logo">我的作業報告</p>
           </a>
-          <p class="logo_s1">作業報告 ／Topics</p>
+          <p class="logo_s1">作業報告 ／Products</p>
           <p class="logo_s2">此處是我的全部作業報告，新作品會在這裏發布</p>
         </div>
         <!-- header end -->
         <div id="container">
           <!-- contents部分 -->
           <div id="contents">
-            <dl>
-              <dt id="no_2"><a href="#top" class="top">▲Top</a>2018/06/12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个用来记录英语单词信息的JAVA程序。</dt>
-              <dd>
-                <p>
-                  <span>My Vocabulary</span><br />
-                  <br />
-                  <img src="http://pic.yupoo.com/sinaweibo4907754196_v/e364ee9a/23b024e2.png"/><br />
-                  <a href="https://github.com/hexh250786313/MyVocabulary.github.io" target="_blank">Source Code</a>&nbsp;⇐&nbsp;&nbsp;这是一个用来记录英语单词信息的JAVA程序。非常地簡陋。有最基本的讀取、添加和刪除功能，利用XML文檔進行儲存。
-                </p>
-              </dd>
-              <dt id="no_1"><a href="#top" class="top">▲Top</a>2018/05/23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个用来显示备忘事项的JAVA程序。</dt>
-              <dd>
-                <p>
-                  <span>ToDoListViewer</span><br />
-                  <br />
-                  <img src="http://pic.yupoo.com/sinaweibo4907754196_v/917796ab/6efd2750.png"/><br />
-                  <a href="https://github.com/hexh250786313/ToDoListViewer" target="_blank">Source Code</a>&nbsp;⇐&nbsp;&nbsp;这是一个用来显示备忘事项的JAVA程序。查看ToDo清單，隨時整理工作條目。
-                </p>
-              </dd>
+            <dl id = "products"><!--由JS更新-->
             </dl>
           </div>
           <!-- contents end -->
@@ -66,15 +48,7 @@
             <dl>
               <dt>目錄索引／Anchor and Source</dt>
               <table class="table_01">
-              <tbody>
-                <tr>
-                  <th><a href="#no_2">My Vocabulary</a></th>
-                  <td><a href="https://github.com/hexh250786313/MyVocabulary.github.io" target="_blank">source</a></td>
-                </tr>
-                <tr>
-                  <th><a href="#no_1">ToDoListViewer</a></th>
-                  <td><a href="https://github.com/hexh250786313/ToDoListViewer" target="_blank">source</a></td>
-                </tr>
+              <tbody id = "index_t"><!--由JS更新---->
               </tbody>
               </table>
             </dl>
@@ -93,6 +67,5 @@
 
     </div>
     <!-- bkgrcel end -->
-    
   </body>
 </html>
