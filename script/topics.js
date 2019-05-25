@@ -22,6 +22,32 @@ window.onload = function() {
 
   topics.push({
     id: '',
+    index: ['本提督的自我修養之日常吃屎篇', 'post/2019-05-05.html'],
+    date: '2019/05/05',
+    dt:   '本提督的自我修養之日常吃屎篇',
+    ddp:  '\
+      <a href="post/2019-05-05.html" target="_blank">如果妳正好也玩艦娘，可以參考我的日/周/月常任務以及每月海圖的做法</a><br />\
+      ',
+  });
+
+  topics.push({
+    id: '',
+    index: '',
+    date: '2019/05/01',
+    dt:   '可憐的礦仔朋友們',
+    ddp:  '\
+      <a href = "http://pic.yupoo.com/sinaweibo4907754196_v/51ef6847/b14d443d.png"><img src = "http://pic.yupoo.com/sinaweibo4907754196_v/51ef6847/b14d443d.png" style = "width: 200px;"/></a><br />\
+      <br />\
+      馬應龍執教以來，阿礦已經打了4年大鍋飯籃球了<br />\
+      加上約基奇又是個如此沒有ego、英語也很爛的男人<br />\
+      在此基礎上，去年還沒什麽人氣的礦仔區在今年終究還是出現了 “浪費約老師年華” 這種神奇言論<br />\
+      <br />\
+      可見我們不應該在 “虎撲南泥灣球星飯圈和娛樂明星飯圈有什麽差別” 這種問題上再浪費腦細胞<br />\
+      ',
+  });
+
+  topics.push({
+    id: '',
     index: '',
     date: '2019/04/04',
     dt:   '關於三月的二三事',

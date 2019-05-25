@@ -115,7 +115,7 @@ body {
 #index {
   padding-bottom: 20px;
   border-bottom: 3px solid rgba(128, 128, 128, 0.20);
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 #footer {
@@ -125,7 +125,6 @@ body {
 
 .contents {
   padding-bottom: 20px;
-  border-bottom: 3px solid rgba(128, 128, 128, 0.20);
   margin-bottom: 20px;
   line-height: 25px;
 }

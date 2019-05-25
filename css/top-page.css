@@ -23,22 +23,22 @@
 /*导入用Font Spider压缩过的字体*/
 @font-face {
   font-family: "ヒラギノ角ゴ Pro W3";
-  src: url("../font/top-page/ヒラギノ角ゴ Pro W3.woff2") format("woff2"),
-       url("../font/top-page/ヒラギノ角ゴ Pro W3.woff") format("woff"),
-       url("../font/top-page/ヒラギノ角ゴ Pro W3.ttf") format("truetype"),
-       url("../font/top-page/ヒラギノ角ゴ Pro W3.eot") format("embedded-opentype"),
-       url("../font/top-page/ヒラギノ角ゴ Pro W3.svg") format("svg");
+  src: url("../font/ヒラギノ角ゴ Pro W3.woff2") format("woff2"),
+       url("../font/ヒラギノ角ゴ Pro W3.woff") format("woff"),
+       url("../font/ヒラギノ角ゴ Pro W3.ttf") format("truetype"),
+       url("../font/ヒラギノ角ゴ Pro W3.eot") format("embedded-opentype"),
+       url("../font/ヒラギノ角ゴ Pro W3.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "msgothic_2";
-  src: url("../font/top-page/msgothic_2.woff2") format("woff2"),
-       url("../font/top-page/msgothic_2.woff") format("woff"),
-       url("../font/top-page/msgothic_2.ttf") format("truetype"),
-       url("../font/top-page/msgothic_2.eot") format("embedded-opentype"),
-       url("../font/top-page/msgothic_2.svg") format("svg");
+  src: url("../font/msgothic_2.woff2") format("woff2"),
+       url("../font/msgothic_2.woff") format("woff"),
+       url("../font/msgothic_2.ttf") format("truetype"),
+       url("../font/msgothic_2.eot") format("embedded-opentype"),
+       url("../font/msgothic_2.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
