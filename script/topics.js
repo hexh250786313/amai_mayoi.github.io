@@ -2,6 +2,7 @@ window.onload = function() {
 
   var topics = [];
 
+
   /*---------------
    *---- 模板 -----
   topics.push({
@@ -26,6 +27,7 @@ window.onload = function() {
     date: '2019/05/05',
     dt:   '本提督的自我修養之日常吃屎篇',
     ddp:  '\
+      <img src = "http://pic.yupoo.com/sinaweibo4907754196_v/e93ceaff/5fcc6172.png" /><br />\
       <a href="post/2019-05-05.html" target="_blank">如果妳正好也玩艦娘，可以參考我的日/周/月常任務以及每月海圖的做法</a><br />\
       ',
   });
@@ -36,7 +38,7 @@ window.onload = function() {
     date: '2019/05/01',
     dt:   '可憐的礦仔朋友們',
     ddp:  '\
-      <a href = "http://pic.yupoo.com/sinaweibo4907754196_v/51ef6847/b14d443d.png"><img src = "http://pic.yupoo.com/sinaweibo4907754196_v/51ef6847/b14d443d.png" style = "width: 200px;"/></a><br />\
+      <img src = "http://pic.yupoo.com/sinaweibo4907754196_v/51ef6847/b14d443d.png" style = "width: 200px;"/><br />\
       <br />\
       馬應龍執教以來，阿礦已經打了4年大鍋飯籃球了<br />\
       加上約基奇又是個如此沒有ego、英語也很爛的男人<br />\
@@ -52,7 +54,7 @@ window.onload = function() {
     date: '2019/04/04',
     dt:   '關於三月的二三事',
     ddp:  '\
-      <img src = "http://pic.yupoo.com/sinaweibo4907754196_v/88e3a69f/039bc23d.jpg" style = "width: 600px;"/><br />\
+      <img src = "http://pic.yupoo.com/sinaweibo4907754196_v/88e3a69f/039bc23d.jpg"/><br />\
       <br />\
       <br />\
       現在來看，整個三月最有意思的反而是月初可以沉溺在HTML的那幾天<br />\
@@ -125,6 +127,9 @@ window.onload = function() {
                  }, getElements("topics", "index_t"));//每次给createTopics方法传递一个数组，getElements方法返回一个包含所需元素（topics和index_t）的对象，
                                                     //该对象将作为匿名函数的上下文，即在匿名函数中可以用this调用这个对象
   
+  //
+  imgZoom(getElements("contents", "cover"));
+
 }
 
 //获取Element对象，返回属性是Element的对象
@@ -138,6 +143,160 @@ function getElements(/*ids...*/) {
     elements[id] = elt;
   }
   return elements;
+}
+
+//查看放大图片，原理是设置一个隐藏层
+//这个层在文档加载的时候就被加载并隐藏
+//点击图片的时候的显示，点击灰色层则再次隐藏
+function imgZoom(els) {
+
+  //设置cover层
+  els["cover"].style = "position: absolute;\
+                        z-index: 800;\
+                        top: 0px;\
+                        left: 0px;\
+                        width: 11451px;\
+                        background-color: rgb(0, 0, 0);\
+                        opacity: 0.5;\
+                        display: none;";
+
+  //用于检测遮罩层是否显示
+  var ifdisplay = els["cover"].style.display;
+
+  //存放未显示图片的div，里面含有一个img标签
+  var imgbgr = [];
+
+  //引用的是网页中原有的img
+  var img;
+  //遍历全部contents中的img标签，为其新建查看层
+  for(var i = 0; (null != (img = els["contents"].getElementsByTagName("img")[i])); i++) {
+    (function(n){
+      img = els["contents"].getElementsByTagName("img")[n];
+
+      //新建img标签和存放img标签的背景div
+      imgbgr[n] = document.createElement("div");
+      imgbgr[n].className = "imgbgr";
+      //imgbgr[n].initialized = "true";
+      //imgbgr[n].timer = "1123";
+
+      var hiddenimg = document.createElement("img"); 
+      hiddenimg.className = "hiddenimg";
+      hiddenimg.src = img.src;
+      hiddenimg.draggable = false;//取消图片的默认拖拽行为（也就是拖出来在其他页面打开或者拖拽下载的默认行为），否则会使得图片拖拽移动的时候多一个默认行为
+      hiddenimg.dataset.rectX = "0";
+      hiddenimg.dataset.rectY = "0";
+      hiddenimg.dataset.flag = "0";
+
+      //放入文档中
+      imgbgr[n].appendChild(hiddenimg);
+      document.body.appendChild(imgbgr[n]);
+
+      //为隐藏层设置点击显示事件
+      img.onclick = function() {
+
+        //var docW = document.body.clientWidth;
+        var docH = document.body.clientHeight;
+        //alert(docW + " " + docH);
+        //els["cover"].style.width = "" + docW + "px";
+        els["cover"].style.height = "" + docH + "px";
+      
+        //position是图片打开时的位置
+        //box是图片box的长宽
+        var positionX;
+        var positionY;
+        var boxW;
+        var boxH;
+
+        //获取视口宽度和高度
+        var portSize = getViewportSize(window);
+        var portW = portSize.w;
+        var portH = portSize.h;
+        
+        //判断是否属于隐藏状态
+        //是则把box和cover变为显示状态
+        //同时把浏览器设置为不能滚动（出于不明原因，设为显示后整个文档长度会变得非常长，推测是cover长宽的原因，以后解决（利用文档宽度））
+        if("none" == ifdisplay) {
+          els["cover"].style.display = "block";
+          imgbgr[n].style.display = "block";
+          document.body.parentNode.style.overflowX = "hidden";
+
+          //为box和img添加移动事件
+          moveImg(hiddenimg, imgbgr[n]);
+
+          //该flag的作用是只获取第一次的图片长宽度，也就是原始图片长宽度
+          //把长款储存到元素的data-属性中，然后以后每一次都使用这个长宽
+          //目的是为了每次打开图片都匹配宽度，防止浏览器视口宽度小于图片宽度时发生改变的时候图片尺寸出问题
+          //（浏览器宽度小于图片宽度的时候，图片自适应为视口宽度，下一次打开图片时检测到的图片宽度是调整后的图片宽度的，那就出问题了）
+          if("0" == hiddenimg.dataset.flag) {
+            hiddenimg.dataset.rectX = hiddenimg.getBoundingClientRect().right - hiddenimg.getBoundingClientRect().left;
+            hiddenimg.dataset.rectY = hiddenimg.getBoundingClientRect().bottom - hiddenimg.getBoundingClientRect().top;
+            hiddenimg.dataset.flag = "1";
+          }else {
+            //每次点开图片前都还原其长宽
+            hiddenimg.style.width = "" + hiddenimg.dataset.rectX + "px";
+          }
+          //获取第一次运行时储存在图片标签中的data-rect-x和data-rect-y的长宽数据
+          boxW = parseInt(hiddenimg.dataset.rectX) + 30;//int
+          
+          //分为四类情况
+          //一、视宽 > 780px且图box > 780px，此时需要把图box调整为780px（即把图调整为750xp），然后居中
+          //二、视宽 <= 780px且视宽 = 图宽，直接居左 
+          //三、视宽 > 图box，此时居中即可
+          //四、视宽 < 图box，此时图box调整为视宽大小，并居左
+          if((portW > 780) && (boxW  > 780)) {//第一类
+            positionX = (portW - 780 - 17)/2;//这里的17是滚动条的宽度
+            hiddenimg.style.width = "750px";
+          }else if((portW) <= 780 && (portW == boxW)) {//第二类
+            positionX = 0;
+          }else if(portW > boxW) {//第三类
+            positionX = (portW - boxW - 17)/2;
+          }else {//第四类
+            hiddenimg.style.width = "" + (portW - 47) + "px";//47是两个内边框总宽30+滚动条宽度17
+            positionX = 0;
+          }
+          imgbgr[n].style.left = "" + positionX + "px";
+          //imgbgr[n].style.top = "10%";
+          imgbgr[n].style.top = "" + (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2 + "px";
+
+          //设置鼠标滚动缩放
+          var i = 1;
+          var box_W = imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left;
+
+          hiddenimg.onmousewheel = function() {
+            if (event.deltaY < 0) {
+              i += 0.2;
+              hiddenimg.style.width = (box_W - 30) * i + 'px';
+              //中间作为放大基点
+              positionX = (portW - 17 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
+              positionY = (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
+              imgbgr[n].style.left = "" + positionX + "px";
+              imgbgr[n].style.top = "" + positionY + "px";
+            }else {
+              i -= 0.2;
+              if(i <= 0.2) i = 0.2;
+              hiddenimg.style.width = (box_W - 30) * i + 'px';
+              //中间作为缩小基点
+              positionX = (portW - 17 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
+              positionY = (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
+              imgbgr[n].style.left = "" + positionX + "px";
+              imgbgr[n].style.top = "" + positionY + "px";
+            }
+            return false;
+          }//onmousewheel end
+
+        }//ifDisplay end
+      }//click end
+    }(i));//调整作用域
+  }//循环 out
+
+  //点击覆盖层后重新隐藏
+  els["cover"].onclick = function() {
+    els["cover"].style.display = "none";
+    for(var x = 0; x < imgbgr.length; x++) {
+      imgbgr[x].style.display = "none";
+    }
+    document.body.parentNode.style.overflow = "visible";
+  }
 }
 
 //新建一个topic，每次接收一个topic对象，每个topic有id、index、date、dt、ddp三个属性
@@ -193,4 +352,99 @@ function createTopic(topic, i, len, els) {
     //把tr放入index
     els["index_t"].appendChild(tr);
   }
+}
+
+//实现图片拖拽，监听box或者图片时，接收隐藏的那个外壳div和img
+function moveImg(img, box) {
+  //监听鼠标在图片内点击的时候
+  img.onmousedown = function(e) {
+    e = e || window.event;
+    //当鼠标按下的时候,获得鼠标在盒子中的位置
+    //鼠标在盒子中的位置=鼠标在页面中的位置-盒子在页面的位置
+    //鼠标在页面中的位置
+    var x = e.pageX || e.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
+    var y = e.pageY || e.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
+
+    //盒子在页面中的位置
+    var box_x = box.offsetLeft;
+    var box_y = box.offsetTop;
+    //鼠标在盒子中的位置
+    var mouse_in_box_x = x - box_x;
+    var mouse_in_box_y = y - box_y;
+
+    //注册鼠标移动事件,因为鼠标按下后,在页面移动,盒子跟着移动
+    document.onmousemove = function(e) {
+      e = e || window.event;
+      //鼠标在页面中移动时,求盒子的坐标
+      //鼠标移动时盒子移动位置=鼠标当前位置-鼠标在盒子中移动的距离
+      x = e.pageX || e.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
+      y = e.pageY || e.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
+
+      var boxX = x - mouse_in_box_x;
+      var boxY = y - mouse_in_box_y;
+      //px一定不能忘
+      box.style.left = boxX + 'px';
+      box.style.top = boxY + 'px';
+    }
+  }
+  //当鼠标弹起时,移出鼠标移动事件
+  img.onmouseup = function() {
+    document.onmousemove = null;
+  }
+
+  //监听鼠标在box内点击的时候
+  box.onmousedown = function(e) {
+    e = e || window.event;
+    //当鼠标按下的时候,获得鼠标在盒子中的位置
+    //鼠标在盒子中的位置=鼠标在页面中的位置-盒子在页面的位置
+    //鼠标在页面中的位置
+    var x = e.pageX || e.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
+    var y = e.pageY || e.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
+
+    //盒子在页面中的位置
+    var box_x = box.offsetLeft;
+    var box_y = box.offsetTop;
+    //鼠标在盒子中的位置
+    var mouse_in_box_x = x - box_x;
+    var mouse_in_box_y = y - box_y;
+
+    //注册鼠标移动事件,因为鼠标按下后,在页面移动,盒子跟着移动
+    document.onmousemove = function(e) {
+      e = e || window.event;
+      //鼠标在页面中移动时,求盒子的坐标
+      //鼠标移动时盒子移动位置=鼠标当前位置-鼠标在盒子中移动的距离
+      x = e.pageX || e.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
+      y = e.pageY || e.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
+
+      var boxX = x - mouse_in_box_x;
+      var boxY = y - mouse_in_box_y;
+      //px一定不能忘
+      box.style.left = boxX + 'px';
+      box.style.top = boxY + 'px';
+    }
+  }
+  //当鼠标弹起时,移出鼠标移动事件
+  box.onmouseup = function() {
+    document.onmousemove = null;
+  }
+}
+
+//查询窗口的视口尺寸
+function getViewportSize(w) {
+  //使用指定的窗口，如果不带参数则使用当前窗口
+  w = w || window;
+
+  //除了IE 8以及更早的版本，其他浏览器都能用
+  if(w.innerWidth != null) return { w: w.innerWidth, h: w.innerHeight };
+
+  //对标准模式下的IE（或任何浏览器）
+  var d = w.document;
+  if(document.compatMode == "CSS1Compat")
+    return {
+      w: d.documentElement.clientWidth,
+      h: d.documentElement.clientHeight
+    };
+
+  //对怪异模式下的浏览器
+  return { w: d.body.clientWidth, h: d.body.clientHeight };
 }

@@ -422,7 +422,7 @@ body {
   text-decoration: underline;
 }
 
-#cnt_sidebar img#btn { cursor:pointer; }
+#cnt_sidebar img#btn { cursor: pointer; }
 
 #cnt_sidebar p.p_mail {
   font-size: 90%;
