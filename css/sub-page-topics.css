@@ -347,12 +347,35 @@ div.imgbgr {
   position: fixed;
   z-index: 801;
   cursor: move;
-  padding-top: 50px;
+  padding-top: 5px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
-  background: rgb(255, 255, 255);
+  background: #f6f7eb;
   display: none;
 }
 
-.hiddenimg { cursor: move; }
+div.imgbgr p {
+  text-align: left;
+  font-weight: bold;
+}
+
+div.imgbgr p span {
+  padding-right: 20px;
+}
+
+div.imgbgr p a {
+  cursor: pointer;
+  float: right;
+  text-decoration: none;
+}
+
+div.imgbgr p a:link { color: black; }
+div.imgbgr p a:visited { color: black; }
+div.imgbgr p a:hover { color: #f00; }
+div.imgbgr p a:active { color: #f00; }
+
+.hiddenimg { 
+  cursor: move;
+  padding-top: 5px;
+}

@@ -160,6 +160,12 @@ function imgZoom(els) {
                         opacity: 0.5;\
                         display: none;";
 
+  //提示文字和按钮
+  var tip;
+  var btn1;
+  var btn2;
+  var btn3;
+
   //用于检测遮罩层是否显示
   var ifdisplay = els["cover"].style.display;
 
@@ -172,6 +178,21 @@ function imgZoom(els) {
   for(var i = 0; (null != (img = els["contents"].getElementsByTagName("img")[i])); i++) {
     (function(n){
       img = els["contents"].getElementsByTagName("img")[n];
+
+      tip = document.createElement("p");
+      tip.innerHTML = "<span>鼠标滚轮缩放图片</span>";
+
+      //按钮
+      btn1 = document.createElement("a");
+      btn2 = document.createElement("a");
+      btn3 = document.createElement("a");
+
+      btn1.innerText = "【关闭】";
+      btn2.innerText = "【原图】";
+      btn3.innerText = "【新窗口打开】";
+
+      btn3.href = img.src;
+      btn3.target = "_blank";
 
       //新建img标签和存放img标签的背景div
       imgbgr[n] = document.createElement("div");
@@ -188,6 +209,10 @@ function imgZoom(els) {
       hiddenimg.dataset.flag = "0";
 
       //放入文档中
+      tip.appendChild(btn1);
+      tip.appendChild(btn2);
+      tip.appendChild(btn3);
+      imgbgr[n].appendChild(tip);
       imgbgr[n].appendChild(hiddenimg);
       document.body.appendChild(imgbgr[n]);
 
@@ -263,12 +288,21 @@ function imgZoom(els) {
           var box_W = imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left;
 
           hiddenimg.onmousewheel = function() {
+            var preX = imgbgr[n].getBoundingClientRect().left;
+            var preY = imgbgr[n].getBoundingClientRect().top;
+            var preW = imgbgr[n].getBoundingClientRect().right - preX;
+            var preH = imgbgr[n].getBoundingClientRect().bottom - preY;
+  
+            //alert(box_W);
             if (event.deltaY < 0) {
               i += 0.2;
               hiddenimg.style.width = (box_W - 30) * i + 'px';
               //中间作为放大基点
-              positionX = (portW - 17 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
-              positionY = (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
+              positionX = preX - ((imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left) - preW)/2;
+              positionY = preY - ((imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top) - preH)/2;
+              //alert(preX + (box_W/2 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left)/2));
+              //positionX = (portW - 17 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
+              //positionY = (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
               imgbgr[n].style.left = "" + positionX + "px";
               imgbgr[n].style.top = "" + positionY + "px";
             }else {
@@ -276,16 +310,34 @@ function imgZoom(els) {
               if(i <= 0.2) i = 0.2;
               hiddenimg.style.width = (box_W - 30) * i + 'px';
               //中间作为缩小基点
-              positionX = (portW - 17 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
-              positionY = (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
+              //alert(imgbgr[n].style.left);
+              //alert(preX + (preW/2 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left)/2));
+              //alert(preX + (preW - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2);
+              positionX = preX + (preW - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
+              positionY = preY + (preH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
+              //positionX = (portW - 17 - (imgbgr[n].getBoundingClientRect().right - imgbgr[n].getBoundingClientRect().left))/2;
+              //positionY = (portH - (imgbgr[n].getBoundingClientRect().bottom - imgbgr[n].getBoundingClientRect().top))/2;
               imgbgr[n].style.left = "" + positionX + "px";
               imgbgr[n].style.top = "" + positionY + "px";
+              //alert(imgbgr[n].style.left);
             }
             return false;
           }//onmousewheel end
 
         }//ifDisplay end
       }//click end
+
+      //点击原图键后图片变为原图大小
+      btn2.onclick = function() {
+        ff
+      }
+
+      //点击关闭按钮后重新隐藏
+      btn1.onclick = function() {
+        els["cover"].style.display = "none";
+        imgbgr[n].style.display = "none";
+        document.body.parentNode.style.overflow = "visible";
+      }    
     }(i));//调整作用域
   }//循环 out
 
