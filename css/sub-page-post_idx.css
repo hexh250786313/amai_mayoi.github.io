@@ -1,0 +1,78 @@
+﻿@charset "utf-8";
+
+/* -------------------------------------------------------------
+
+[1] 基础布局设定
+
+----------------------------------------------------------------*/
+
+/*全局设定*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*链接的全局样式设定*/
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: underline;
+  margin-left: 15px;
+}
+
+a:link { color: #0099FF; }
+
+a:visited { color: #90f; }
+
+a:hover { color: #f00; }
+
+a:active { color: #f00; }
+
+/*標題的全局樣式設定*/
+h1 {
+  margin-bottom: 100px;
+}
+
+h2 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.20);
+  margin-bottom: 20px;
+}
+
+span { font-weight: bold; }
+
+/*----------------------------------------------
+  [1] 基础布局设定 */
+/*-- 按照html文档的block顺序排列 --*/
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding:0;
+  margin: 0;
+}
+
+#bkgrcel {
+  text-align: left;
+  width: 890px;
+  margin: 50px auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 45px;
+  padding-right: 45px;
+  background-color: #fff;
+  background-position: top center;
+  line-height: 25px;
+}
+
+#footer {
+  width: 890px;
+  margin-top: 50px;
+}
+
+#footer p {
+  text-align: left;
+}
