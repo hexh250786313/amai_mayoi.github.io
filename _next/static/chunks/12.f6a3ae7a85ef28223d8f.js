@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{"1QJg":function(n,e,t){"use strict";t.r(e),e.default='---\ntitle: "Hello World"\ndate: "2020-01-07"\n---\n\n### Step 1\n\n- Install dependencies\n- Run locally\n- Deploy to Zeit\n\n# WDNMD\n\n```javascript\nimport hello from \'react\';\n```\n'}}]);
