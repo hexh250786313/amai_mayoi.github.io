@@ -1,0 +1,19 @@
+{
+  "name": "initial-code",
+  "scripts": {
+    "start": "next -p 8080",
+    "build": "next build",
+    "prod": "next start",
+    "export": "next export",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+  },
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "raw-loader": "^4.0.0",
+    "gray-matter": "^4.0.2",
+    "react-markdown": "^4.3.1",
+    "react-syntax-highlighter": "^12.2.1"
+  }
+}

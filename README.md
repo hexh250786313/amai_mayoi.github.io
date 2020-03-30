@@ -1,2 +1,2 @@
-# hexuhua.xyz
-我的個人主頁
+# nextjs-githubpages
+Next.js Github Pages.
