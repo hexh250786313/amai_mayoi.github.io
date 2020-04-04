@@ -1,109 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Style-Type" content="text/css">
-    <meta http-equiv="Content-Script-Type" content="text/javascript">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>我的個人主頁</title>
-    <meta name="description" content="真宵的個人主頁">
-    <meta name="keywords" content="真宵,k1ryu1ma,10r7,九,blog,博客,主頁">
-    <link rel="shortcut icon" type="image/x-icon" href="img/tama.ico" media="screen" />
-    <link rel="stylesheet" href="css/top-page.css" type="text/css" media="screen" />
-    <script src = "script/index.js"></script>
-    <script src="script/clipboard.min.js"></script>
-  </head>
-  <body>
-    <div id="bkgrcel">
-      <div id="wrapper">
-        <!-- header是网页的上半部分 -------------->
-        <div id="header">
-          <p class="logo_t">A M A I - M A Y O I</p>
-          <p class="logo">我的個人主頁</p>
-          <div id="sidebar">
-            <!-- 右上侧的box1 ------------------>
-            <h2>CONTENTS</h2>
-            <ul class="navigation">
-              <!-- "li_n"表示带有NEW!logo的 / "li"表示没有NEW!logo -->
-              <li_n><a href="topics.html">　<span>我的日誌更新</span>／TOPICS</a></li_n>
-              <li_n><a href="products.html">　<span>戰果情報</span>　＜PRODUCTS＞</a></li_n>
-              <li><a href="about_me.html">　<span>關於我</span>／ABOUT MAYOI &amp; ME</a></li>
-              <!----------------------------------------------------->
-            </ul>
-            <!-- 右上侧的box2 ------------------>
-            <dl>
-              <dt>更新日誌</dt>
-              <dd>
-              <pre id = "new"><!--此部分内容由JS進行更新--></pre>
-              </dd>
-            </dl>
-          </div>
-          <!-- sidebar end -->
-        </div>
-        <!-- header end -->
-        <!-- container是网页的下半部分 -------------->
-        <div id="container">
-          <!-- products是右下侧的box ---------------->
-          <div id="products"><!--由JS更新-->
-          </div>
-          <!-- products end -->
-          <div id="style_blnk">
-          <!-- 调整用的box ---------------------->
-            <p>　</p>
-          <!-- 调整用的box ---------------------->
-          </div>
-          <!-- style_blnk end ------------------>
-          <!-- contents是中间的内容box ------------->
-          <div id="contents">
-            <!-- 中央box ---------------------->
-            <h2>TOPICS／我的最新情報</h2>
-            <dl id = "topics"><!--此處由JS進行更新-->
-            </dl>
-            <!-- 中央box结束 ---------------------->
-          </div>
-          <!-- container end --------------------------------------->
-          <!-- 左下侧box ----------------------------------------------->
-          <div id="cnt_sidebar">
-            <h2>LINK／聯系方式</h2>
-            <!-- 左下侧box1 ---------------------->
-            <dl>
-              <dt>外部聯系方式</dt>
-              <dd>
-                <p>
-                  <a href="https://github.com/hexh250786313" target="_blank"><img src="img/link_GitHub_user.gif" /></a>&nbsp;⇐&nbsp;GitHub<br /><br />
-                  <a href="https://weibo.com/HanaSoup" target="_blank"><img src="img/link_weibo_user.gif" /></a>&nbsp;⇐&nbsp;weibo<br /><br />
-                  <a href="https://twitter.com/Hana_Soup" target="_blank"><img src="img/link_Twitter_user.gif" /></a>&nbsp;⇐&nbsp;Twitter
-                </p>
-              </dd>
-              <!-- 左下侧box1结束 ---------------------------------->
-              <!-- 左下侧box2 --------------------------------------------->
-              <dt>如有問題請聯系</dt>
-              <dd>
-                &nbsp;&nbsp;&nbsp;&nbsp;<img id="btn" src="img/link_mail.png" data-clipboard-text="250786313@qq.com" />
-                <br />
-                <p class="p_mail">
-                  以上三個外部號都無法聯系到我的時候，請使用郵箱聯系我（點擊這個小圖片就可拷貝郵箱地址）<br />
-                  如果本網站內容有任何侵權或不當行為務必請最先告知讓我及時改正<br /><br />
-                  謝謝各位，祝您生活愉快<br />
-                </p>
-              </dd>
-              <!-- 左下侧box2结束 --------------------------------------->
-            </dl>
-            <!-- 左下侧box结束 ---------------------->
-          </div>
-          <!-- cnt_sidebar end ------------------------------------------->
-          <!-- 保证背景图片正常显示的不可删除的代码 --------------------------->
-          <p id="clr"></p>
-        </div>
-        <!-- container end ---------------------------->
-      </div>
-      <!-- wrapper end ------------------------------------------>
-      <!-- footer是网页的注脚 ------------------------------------------>
-      <div id="footer">
-        <p>Copyright © 2019 AMAI_MAYOI ❖ Designed by HE Xuhua.</p>
-      </div>
-      <!-- footer end --------------------->
-    </div>
-    <!-- bkgrcel end ---------------------------------------------->
-    <div id="cover" style="position: absolute; z-index: 800; top: 0px; left: 0px; width: 100%; height: 14431px; background-color: rgb(0, 0, 0); opacity: 0.5; display: none;"></div>
-  </body>
-</html>
+<!DOCTYPE html><html><head><style>
+            body {
+              position: absolute;
+              top: 0;
+            }
+          </style><meta name="viewport" content="width=device-width, initial-scale=1" class="jsx-1879460706"/><meta charSet="utf-8" class="jsx-1879460706"/><title class="jsx-1879460706">hxh&#x27;s page</title><link rel="shortcut icon" href="/logo.ico" type="image/ico" class="jsx-1879460706"/><meta name="next-head-count" content="5"/><link rel="preload" href="/amai_mayoi.github.io/_next/static/GgnF4FCudTjbtrrPYXxh4/pages/index.js" as="script"/><link rel="preload" href="/amai_mayoi.github.io/_next/static/GgnF4FCudTjbtrrPYXxh4/pages/_app.js" as="script"/><link rel="preload" href="/amai_mayoi.github.io/_next/static/runtime/webpack.js" as="script"/><link rel="preload" href="/amai_mayoi.github.io/_next/static/chunks/styles.js" as="script"/><link rel="preload" href="/amai_mayoi.github.io/_next/static/runtime/main.js" as="script"/><link rel="stylesheet" href="/amai_mayoi.github.io/_next/static/css/styles.chunk.css"/><style id="__jsx-595647904">.container.jsx-595647904{position:absolute;top:0;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.content-outer.jsx-595647904{background-color:#fff;min-height:100vh;width:100%;max-width:1200px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}.content-inner.jsx-595647904{width:1000px;min-width:800px;}</style><style id="__jsx-3480856513">.bg-header-1.jsx-3480856513{background-color:#AD46CD;height:30px;width:100%;}.bg-header-2.jsx-3480856513{height:30px;width:100%;}.bg-header-3.jsx-3480856513{background:linear-gradient(to bottom,#AD46CD,50%,rgba(255,255,255,0));height:300px;width:100%;}</style><style id="__jsx-3698443240">.header.jsx-3698443240{width:100%;height:500px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;position:relative;margin-bottom:2em;}.title.jsx-3698443240{padding:20px 10px 20px 0;}.title-main.jsx-3698443240{font-size:55px;text-shadow:5px 5px 1px #999;line-height:1;-webkit-letter-spacing:10px;-moz-letter-spacing:10px;-ms-letter-spacing:10px;letter-spacing:10px;color:#fff;}.title-sub.jsx-3698443240{font-size:27px;text-shadow:5px 5px 17px #000;line-height:1;-webkit-letter-spacing:5px;-moz-letter-spacing:5px;-ms-letter-spacing:5px;letter-spacing:5px;color:#fff;text-align:right;padding-top:10px;}.navigation.jsx-3698443240{list-style-type:none;padding:0;margin:0;}.navigation-li.jsx-3698443240{display:inline;margin:0;}.navigation-a.jsx-3698443240{height:38px;line-height:13px;font-size:13px;text-align:left;-webkit-text-decoration:none;text-decoration:none;width:250px;display:block;padding:10px;border:1px outset #fff;background:url(/static/new.gif) no-repeat 95% 50%;background-color:#eee;color:#060;-webkit-letter-spacing:2px;-moz-letter-spacing:2px;-ms-letter-spacing:2px;letter-spacing:2px;}.navigation-a.jsx-3698443240:hover{border:1px inset #fff;background-color:#ccc;color:#f00;}.sidebar.jsx-3698443240{position:absolute;right:0;bottom:0;}</style><style id="__jsx-2905703498">.title.jsx-2905703498{height:35px;padding:0 0 0 30px;}h2.jsx-2905703498{margin:0;font-size:16px;line-height:35px;}.subtitle.jsx-2905703498{padding:0 0 0 30px;height:32px;font-size:13px;font-weight:bold;line-height:32px;}</style><style id="__jsx-3741463688">dl.jsx-3741463688{padding:30px 0;width:250px;overflow:hidden;margin:0;}dd.jsx-3741463688{font-size:90%;height:100px;padding:10px 10px 0;overflow:auto;background-color:rgba(255,255,255,0.85);color:#060;}dt.jsx-3741463688{font-weight:bold;height:20px;overflow:hidden;background-color:#8ee5ee;color:#000;}</style><style id="__jsx-4159317157">.container.jsx-4159317157{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:space-around;-webkit-justify-content:space-around;-ms-flex-pack:space-around;justify-content:space-around;}</style><style id="__jsx-1108452719">dl.jsx-1108452719{margin:0;-webkit-text-decoration:underline;text-decoration:underline;}</style><style id="__jsx-694802060">a.jsx-694802060{color:inherit;}</style><style id="__jsx-1927098638">img.jsx-1927098638{cursor:pointer;}p.jsx-1927098638{font-size:12px;line-height:15px;color:#f00;width:100%;padding:10px 15px 0;margin:0;}.ant-message-notice-content{border:1px outset #fff;color:#006600;background-color:#eee;}.anticon-check-circle{display:none;}</style><style id="__jsx-4012116918">.center.jsx-4012116918{-webkit-flex:1;-ms-flex:1;flex:1;margin-left:40px;}</style><style id="__jsx-2394434144">.post.jsx-2394434144{height:300px;}</style><style id="__jsx-3561655339">.right.jsx-3561655339{margin-left:40px;}</style><style id="__jsx-3488960270">.container.jsx-3488960270{width:100%;}.bg-footer.jsx-3488960270{height:60px;background-color:#AD46CD;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff;}</style></head><body><div id="__next"><div id="header_bar" class="jsx-3480856513 container"><div class="jsx-3480856513 bg-header-1"></div><div class="jsx-3480856513 bg-header-2"></div><div class="jsx-3480856513 bg-header-3"></div></div><div class="jsx-595647904 container"><div class="jsx-595647904 content-outer"><div style="background:url(http://pic.yupoo.com/sinaweibo4907754196_v/8e69904f/19ecaf8d.png) no-repeat 0 0" class="jsx-595647904 content-inner"><div class="jsx-2940446533 home"><div class="jsx-3698443240"><div class="jsx-3698443240 header"><div class="jsx-3698443240 title"><div class="jsx-3698443240 title-box"><div style="color:#fff" class="jsx-3698443240 title-main">AMAI-MAYOI</div><div style="color:#fff" class="jsx-3698443240 title-sub">我的个人主页</div></div></div><div class="jsx-3698443240 sidebar"><div class="jsx-3698443240"><div style="width:250px" class="jsx-2905703498 container"><div style="background:rgba(255, 187, 255, 0.5) url(/static/title_red.gif) no-repeat 3px 50%" class="jsx-2905703498 title"><h2 class="jsx-2905703498">CONTENTS</h2></div><ul class="jsx-3698443240 navigation"><li class="jsx-3698443240 navigation-li" href="undefined/"><a class="jsx-3698443240 navigation-a"><span class="jsx-3698443240">首页</span></a></li><li class="jsx-3698443240 navigation-li" href="undefined/"><a class="jsx-3698443240 navigation-a"><span class="jsx-3698443240">我的 Log 更新</span></a></li><li class="jsx-3698443240 navigation-li" href="undefined/"><a class="jsx-3698443240 navigation-a"><span class="jsx-3698443240">仓库</span></a></li><li class="jsx-3698443240 navigation-li" href="undefined/"><a class="jsx-3698443240 navigation-a"><span class="jsx-3698443240">关于我</span></a></li></ul></div></div><dl class="jsx-3741463688"><dt class="jsx-3741463688">更新日志</dt><dd class="jsx-3741463688"><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p><p class="jsx-3741463688">hello</p></dd></dl></div></div></div><div class="jsx-4159317157 container"><div class="jsx-2085888330"><div style="width:250px" class="jsx-2905703498 container"><div style="background:rgba(255, 187, 255, 0.7) url(/static/title_pink.gif) no-repeat 3px 50%" class="jsx-2905703498 title"><h2 class="jsx-2905703498">联系方式</h2></div><div style="background-color:#EEA2AD" class="jsx-2905703498 subtitle">外部联系方式</div><div style="border:1px solid #999;border-top:0;height:107px;background-color:rgba(255, 255, 255, 0.85);display:flex;justify-content:center;align-items:center;flex-direction:column;margin-bottom:13px" class="jsx-1108452719"><dl class="jsx-1108452719"><dd class="jsx-694802060"><a href="https://github.com/hexh250786313" target="_blank" class="jsx-694802060"><img src="/static/link_GitHub_user.gif" alt="GitHub" class="jsx-694802060"/> ⇐ <!-- -->GitHub</a></dd><dd class="jsx-694802060"><a href="https://weibo.com/HanaSoup" target="_blank" class="jsx-694802060"><img src="/static/link_weibo_user.gif" alt="weibo" class="jsx-694802060"/> ⇐ <!-- -->weibo</a></dd><dd class="jsx-694802060"><a href="https://twitter.com/Hana_Soup" target="_blank" class="jsx-694802060"><img src="/static/link_Twitter_user.gif" alt="Twitter" class="jsx-694802060"/> ⇐ <!-- -->Twitter</a></dd></dl></div></div><div style="width:250px;height:115px" class="jsx-2905703498 container"><div style="background-color:#EEA2AD" class="jsx-2905703498 subtitle">如有问题请联系</div><div style="border:1px solid #999;border-top:0;height:174px;background-color:rgba(255, 255, 255, 0.85);display:flex;justify-content:center;align-items:center;flex-direction:column;margin-bottom:13px" class="jsx-1927098638"><img src="/static/link_mail.png" alt="mail" class="jsx-1927098638"/><p class="jsx-1927098638">以上三个外部号都无法联系到我的时候，请使用邮箱联系我（点击这个小图片就可拷贝邮箱地址）<br class="jsx-1927098638"/>如果本网站内容有任何侵权或不当行为务必请最先告知让我及时改正<br class="jsx-1927098638"/><br class="jsx-1927098638"/>谢谢，祝您生活愉快</p></div></div></div><div class="jsx-4012116918 center"><div style="width:100%" class="jsx-2905703498 container"><div style="background:rgba(255, 187, 255, 0.7) url(/static/title_pink.gif) no-repeat 3px 50%" class="jsx-2905703498 title"><h2 class="jsx-2905703498">联系方式</h2></div><div style="background-color:#B2DFEE" class="jsx-2905703498 subtitle">外部联系方式</div><div class="jsx-2394434144 post"><div><ul>
+<li>hello</li>
+<li>bye</li>
+</ul>
+<ol>
+<li>hello</li>
+<li>bye</li>
+</ol>
+</div></div></div><div style="width:100%;height:115px" class="jsx-2905703498 container"><div style="background-color:#B2DFEE" class="jsx-2905703498 subtitle">如有问题请联系</div><div>hello</div></div></div><div class="jsx-3561655339 right"><div style="width:200px;height:115px" class="jsx-2905703498 container"><div style="background:rgba(255, 187, 255, 0.7) url(/static/title_pink.gif) no-repeat 3px 50%" class="jsx-2905703498 title"><h2 class="jsx-2905703498">联系方式</h2></div><div style="background-color:#CDC5BF" class="jsx-2905703498 subtitle">外部联系方式</div><div>hello</div></div><div style="width:200px;height:115px" class="jsx-2905703498 container"><div style="background-color:#CDC5BF" class="jsx-2905703498 subtitle">如有问题请联系</div><div>hello</div></div></div></div></div></div></div><div id="footer_bar" class="jsx-3488960270 container"><div class="jsx-3488960270 bg-footer"><div class="jsx-3488960270">Copyright © <!-- -->2020<!-- --> hxh.xyz ❖ Designed by HE Xuhua.</div></div></div></div></div><script src="/amai_mayoi.github.io/_next/static/development/dll/dll_ab82997262842abce337.js"></script><script id="__NEXT_DATA__" type="application/json">{"dataManager":"[]","props":{"isServer":true,"initialState":{"home":{"counter":{"count":0}},"user":{"list":{"list":[{"url":"https://api.github.com/repos/hexh250786313/amai_mayoi.github.io/issues/3","repository_url":"https://api.github.com/repos/hexh250786313/amai_mayoi.github.io","labels_url":"https://api.github.com/repos/hexh250786313/amai_mayoi.github.io/issues/3/labels{/name}","comments_url":"https://api.github.com/repos/hexh250786313/amai_mayoi.github.io/issues/3/comments","events_url":"https://api.github.com/repos/hexh250786313/amai_mayoi.github.io/issues/3/events","html_url":"https://github.com/hexh250786313/amai_mayoi.github.io/issues/3","id":589812395,"node_id":"MDU6SXNzdWU1ODk4MTIzOTU=","number":3,"title":"Test","user":{"login":"hexh250786313","id":26080416,"node_id":"MDQ6VXNlcjI2MDgwNDE2","avatar_url":"https://avatars2.githubusercontent.com/u/26080416?v=4","gravatar_id":"","url":"https://api.github.com/users/hexh250786313","html_url":"https://github.com/hexh250786313","followers_url":"https://api.github.com/users/hexh250786313/followers","following_url":"https://api.github.com/users/hexh250786313/following{/other_user}","gists_url":"https://api.github.com/users/hexh250786313/gists{/gist_id}","starred_url":"https://api.github.com/users/hexh250786313/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hexh250786313/subscriptions","organizations_url":"https://api.github.com/users/hexh250786313/orgs","repos_url":"https://api.github.com/users/hexh250786313/repos","events_url":"https://api.github.com/users/hexh250786313/events{/privacy}","received_events_url":"https://api.github.com/users/hexh250786313/received_events","type":"User","site_admin":false},"labels":[{"id":1943570153,"node_id":"MDU6TGFiZWwxOTQzNTcwMTUz","url":"https://api.github.com/repos/hexh250786313/amai_mayoi.github.io/labels/blog","name":"blog","color":"e589ff","default":false,"description":"blog"}],"state":"open","locked":false,"assignee":null,"assignees":[],"milestone":null,"comments":0,"created_at":"2020-03-29T15:06:08Z","updated_at":"2020-03-29T15:10:05Z","closed_at":null,"author_association":"OWNER","body":"- hello\r\n- bye\r\n\r\n1. hello\r\n1. bye"}]}}},"initialProps":{"pageProps":{"isServer":true}}},"page":"/","query":{},"buildId":"GgnF4FCudTjbtrrPYXxh4","assetPrefix":"/amai_mayoi.github.io","runtimeConfig":{"staticFolder":"/static","isDev":false},"nextExport":true}</script><script async="" data-next-page="/" src="/amai_mayoi.github.io/_next/static/GgnF4FCudTjbtrrPYXxh4/pages/index.js"></script><script async="" data-next-page="/_app" src="/amai_mayoi.github.io/_next/static/GgnF4FCudTjbtrrPYXxh4/pages/_app.js"></script><script src="/amai_mayoi.github.io/_next/static/runtime/webpack.js" async=""></script><script src="/amai_mayoi.github.io/_next/static/chunks/styles.js" async=""></script><script src="/amai_mayoi.github.io/_next/static/runtime/main.js" async=""></script></body></html>
