@@ -31,4 +31,4 @@ logs/
 
 # custom
 .next
-out/
+# out/
