@@ -24,7 +24,7 @@
     "start": "node server.js",
     "build": "next build",
     "prod": "NODE_ENV=production node server.js",
-    "deploy": "next build && next export && git add out/ && git commit --no-verify -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit --no-verify -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "keywords": [
     "nextjs",
